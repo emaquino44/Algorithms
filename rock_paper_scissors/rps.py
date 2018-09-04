@@ -3,7 +3,6 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
 
 if __name__ == "__main__":
   # Test out your implementation from the command line
