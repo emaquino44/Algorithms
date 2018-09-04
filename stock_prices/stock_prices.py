@@ -1,12 +1,18 @@
 #!/usr/bin/python
 
 import argparse
+array = [1, 2, 3, 4, 5, 10]
+
 
 def find_max_profit(prices):
-  profit = -1
-  for i in range(len(prices) - 1):
-    profit += max(0, prices[i+1] - prices[i])
-    return profit
+  profit = prices[1] - prices[0]  # Price of day2 - day1 = profit
+  # Loop through all prices using enumerate for indexes
+  for index, i in enumerate(prices):
+    for p in prices[index + 1:]:  # Slicing the array
+      newprofit = p - i
+      if newprofit > profit:
+        profit = newprofit
+  return profit
 
 
 
