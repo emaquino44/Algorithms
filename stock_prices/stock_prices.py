@@ -3,11 +3,16 @@
 import argparse
 
 def find_max_profit(prices):
-  pass 
+  profit = -1
+  for i in range(len(prices) - 1):
+    profit += max(0, prices[i+1] - prices[i])
+    return profit
+
+
 
 
 if __name__ == '__main__':
-  # You can test your implementation by running 
+  # You can test your implementation by running
   # `python stock_prices.py [prices]` where prices is comprised of
   # space-separated integer values
   parser = argparse.ArgumentParser(description='Find max profit from prices.')
